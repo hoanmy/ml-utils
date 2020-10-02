@@ -7,6 +7,7 @@ import os
 import json
 import xml.etree.ElementTree as ET
 import glob
+from tqdm import tqdm
 
 START_BOUNDING_BOX_ID = 1
 # PRE_DEFINE_CATEGORIES = None
@@ -71,7 +72,7 @@ def convert(xml_files, json_file):
     else:
         categories = get_categories(xml_files)
     bnd_id = START_BOUNDING_BOX_ID
-    for xml_file in xml_files:
+    for xml_file in tqdm(xml_files):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         path = get(root, "path")

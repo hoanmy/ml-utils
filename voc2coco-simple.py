@@ -12,15 +12,10 @@ START_BOUNDING_BOX_ID = 1
 # PRE_DEFINE_CATEGORIES = None
 # If necessary, pre-define category and its id
 
-PRE_DEFINE_CATEGORIES = {"Ignore": 0, "Pedestrian": 1, "People": 2, "Bicycle": 3, "Car": 4,
+PRE_DEFINE_CATEGORIES = {"Ignored-regions": 0, "Pedestrian": 1, "People": 2, "Bicycle": 3, "Car": 4,
                          "Van": 5, "Truck": 6, "Tricycle": 7, "Awning-tricycle": 8, "Bus": 9,
                          "Motor": 10, "Others": 11 }
                          
-                        #  "Dog": 12, "horse": 13,
-                        #  "motorbike": 14, "person": 15, "pottedplant": 16,
-                        #  "sheep": 17, "sofa": 18, "train": 19, "tvmonitor": 20}
-
-
 def get(root, name):
     vars = root.findall(name)
     return vars

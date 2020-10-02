@@ -1,7 +1,7 @@
 import cv2
 import os
 import numpy as np
-
+from tqdm import tqdm
 
 input_img_folder = 'VisDrone2019-DET-train/images'
 input_ann_folder = 'VisDrone2019-DET-train/annotations'
@@ -16,7 +16,7 @@ image_list = os.listdir(input_img_folder)
 annotation_list = os.listdir(input_ann_folder)
 
 label_dict = {
-    "0": "Ignore",
+    "0": "Ignored-regions",
     "1": "Pedestrian",
     "2": "People",
     "3": "Bicycle",
@@ -53,7 +53,7 @@ def object_string(label, bbox):
     return req_str
 
 
-for annotation in annotation_list:
+for annotation in tqdm(annotation_list):
     annotation_path = os.path.join(os.getcwd(), input_ann_folder, annotation)
     xml_annotation = annotation.split('.txt')[0] + '.xml'
     xml_path = os.path.join(os.getcwd(), output_ann_folder, xml_annotation)

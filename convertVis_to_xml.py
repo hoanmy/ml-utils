@@ -16,18 +16,18 @@ image_list = os.listdir(input_img_folder)
 annotation_list = os.listdir(input_ann_folder)
 
 label_dict = {
-    "0": "Ignored-regions",
-    "1": "Pedestrian",
-    "2": "People",
-    "3": "Bicycle",
-    "4": "Car",
-    "5": "Van",
-    "6": "Truck",
-    "7": "Tricycle",
-    "8": "Awning-tricycle",
-    "9": "Bus",
-    "10": "Motor",
-    "11": "Others"
+    "1": "Ignored-regions",
+    "2": "Pedestrian",
+    "3": "People",
+    "4": "Bicycle",
+    "5": "Car",
+    "6": "Van",
+    "7": "Truck",
+    "8": "Tricycle",
+    "9": "Awning-tricycle",
+    "10": "Bus",
+    "11": "Motor",
+    "12": "Others"
 }
 
 thickness = 2

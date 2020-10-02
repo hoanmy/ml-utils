@@ -40,7 +40,7 @@ def get_filename_as_int(filename):
     try:
         filename = filename.replace("\\", "/")
         filename = os.path.splitext(os.path.basename(filename))[0]
-        return filename
+        return int(filename)
     except:
         raise ValueError("Filename %s is supposed to be an integer." % (filename))
 

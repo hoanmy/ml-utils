@@ -34,6 +34,7 @@ thickness = 2
 color = (255, 0, 0)
 count = 0
 
+IMAGE_ID = 0
 
 def object_string(label, bbox):
     req_str = '''
@@ -54,14 +55,15 @@ def object_string(label, bbox):
 
 
 for annotation in tqdm(annotation_list):
+    IMAGE_ID += 1
     annotation_path = os.path.join(os.getcwd(), input_ann_folder, annotation)
-    xml_annotation = annotation.split('.txt')[0].replace("_", "").replace("d", "") + '.xml'
+    xml_annotation = str(IMAGE_ID) + '.xml'
     xml_path = os.path.join(os.getcwd(), output_ann_folder, xml_annotation)
     img_file = annotation.split('.txt')[0] + '.jpg'
     img_path = os.path.join(os.getcwd(), input_img_folder, img_file)
-    output_img_path = os.path.join(os.getcwd(), output_img_folder, img_file.replace("_", "").replace("d", ""))
+    output_img_path = os.path.join(os.getcwd(), output_img_folder, str(IMAGE_ID) + '.jpg')
     img = cv2.imread(img_path)
-    img_file = annotation.split('.txt')[0].replace("_", "").replace("d", "") + '.jpg'
+    img_file = str(IMAGE_ID) + '.jpg'
     annotation_string_init = '''
 <annotation>
 	<folder>annotations</folder>

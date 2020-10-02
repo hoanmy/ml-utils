@@ -35,7 +35,12 @@ def get_and_check(root, name, length):
         vars = vars[0]
     return vars
 
-
+# { COCO format, the id of image have to int type
+#     "id": int,
+#     "width": int,
+#     "height": int,
+#     "file_name": str
+# }
 def get_filename_as_int(filename):
     try:
         filename = filename.replace("\\", "/")

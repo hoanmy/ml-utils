@@ -11,7 +11,6 @@ output_img_folder = 'VisDrone2019-DET-train/images_new'
 os.makedirs(output_img_folder, exist_ok=True)
 os.makedirs(output_ann_folder, exist_ok=True)
 
-
 image_list = os.listdir(input_img_folder)
 annotation_list = os.listdir(input_ann_folder)
 
@@ -34,7 +33,7 @@ thickness = 2
 color = (255, 0, 0)
 count = 0
 
-IMAGE_ID = 0
+IMAGE_ID = 1000
 
 def object_string(label, bbox):
     req_str = '''
@@ -64,6 +63,7 @@ for annotation in tqdm(annotation_list):
     output_img_path = os.path.join(os.getcwd(), output_img_folder, str(IMAGE_ID) + '.jpg')
     img = cv2.imread(img_path)
     img_file = str(IMAGE_ID) + '.jpg'
+
     annotation_string_init = '''
 <annotation>
 	<folder>annotations</folder>
@@ -77,7 +77,7 @@ for annotation in tqdm(annotation_list):
 		<height>{}</height>
 		<depth>{}</depth>
 	</size>
-	<segmented>0</segmented>'''.format(img_file, img_path, img.shape[0], img.shape[1], img.shape[2])
+	<segmented>0</segmented>'''.format(img_file, output_img_path, img.shape[0], img.shape[1], img.shape[2])
 
     file = open(annotation_path, 'r')
     lines = file.readlines()

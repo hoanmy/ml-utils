@@ -55,12 +55,13 @@ def object_string(label, bbox):
 
 for annotation in tqdm(annotation_list):
     annotation_path = os.path.join(os.getcwd(), input_ann_folder, annotation)
-    xml_annotation = annotation.split('.txt')[0] + '.xml'
+    xml_annotation = annotation.split('.txt')[0].replace("_", "").replace("d", "") + '.xml'
     xml_path = os.path.join(os.getcwd(), output_ann_folder, xml_annotation)
     img_file = annotation.split('.txt')[0] + '.jpg'
     img_path = os.path.join(os.getcwd(), input_img_folder, img_file)
-    output_img_path = os.path.join(os.getcwd(), output_img_folder, img_file)
+    output_img_path = os.path.join(os.getcwd(), output_img_folder, img_file.replace("_", "").replace("d", ""))
     img = cv2.imread(img_path)
+    img_file = annotation.split('.txt')[0].replace("_", "").replace("d", "") + '.jpg'
     annotation_string_init = '''
 <annotation>
 	<folder>annotations</folder>

@@ -95,4 +95,4 @@ for annotation in tqdm(annotation_list):
     f.write(annotation_string_final)
     f.close()
     count += 1
-    print('[INFO] Completed {} image(s) and annotation(s) pair'.format(count))
+    # print('[INFO] Completed {} image(s) and annotation(s) pair'.format(count))

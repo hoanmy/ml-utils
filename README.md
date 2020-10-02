@@ -1,4 +1,5 @@
 # visdrone
+$ python3 convertVis_to_xml.py
 
 $ python3 voc2coco-simple.py <dir/annotations/> <dir/output.json>
 

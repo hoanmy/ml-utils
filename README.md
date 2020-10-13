@@ -1,4 +1,7 @@
 # visdrone
+
+$ sh gdrive_download.sh 1PFdW_VFSCfZ_sTSZAGjQdifF_Xd5mf0V VisDrone2019-DET-test-dev.zip
+
 $ python3 convertVis_to_xml.py
 
 $ python3 voc2coco-simple.py <dir/annotations/> <dir/output.json>

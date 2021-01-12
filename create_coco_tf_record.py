@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-r"""Convert raw COCO dataset to TFRecord for object_detection.
+"""Convert raw COCO dataset to TFRecord for object_detection.
 
 This tool supports data generation for object detection (boxes, masks),
 keypoint detection, and DensePose.
